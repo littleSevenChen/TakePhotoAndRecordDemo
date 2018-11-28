@@ -1,0 +1,671 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2164552D2617B6F694EEB8E7 /* libPods-TakePhotoAndRecordDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBD1E20ECB5200EDFE187B2 /* libPods-TakePhotoAndRecordDemo.a */; };
+		741B2923219D45D100F48E96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 741B2922219D45D100F48E96 /* AppDelegate.m */; };
+		741B2926219D45D100F48E96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741B2925219D45D100F48E96 /* ViewController.m */; };
+		741B2929219D45D100F48E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741B2927219D45D100F48E96 /* Main.storyboard */; };
+		741B292B219D45D300F48E96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741B292A219D45D300F48E96 /* Assets.xcassets */; };
+		741B292E219D45D300F48E96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741B292C219D45D300F48E96 /* LaunchScreen.storyboard */; };
+		741B2931219D45D300F48E96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 741B2930219D45D300F48E96 /* main.m */; };
+		741B293B219D45D300F48E96 /* TakePhotoAndRecordDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 741B293A219D45D300F48E96 /* TakePhotoAndRecordDemoTests.m */; };
+		741B2946219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 741B2945219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.m */; };
+		741B2955219D4C8B00F48E96 /* UseAVFTakePhotoAndRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741B2954219D4C8B00F48E96 /* UseAVFTakePhotoAndRecordViewController.m */; };
+		746CDAAB219EB44300BE516F /* UseGPUImageVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746CDAAA219EB44300BE516F /* UseGPUImageVideoViewController.m */; };
+		74C7CD5D21AE704300D97AA9 /* VideoSetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74C7CD5C21AE704200D97AA9 /* VideoSetting.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		741B2937219D45D300F48E96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 741B2916219D45D100F48E96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 741B291D219D45D100F48E96;
+			remoteInfo = TakePhotoAndRecordDemo;
+		};
+		741B2942219D45D300F48E96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 741B2916219D45D100F48E96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 741B291D219D45D100F48E96;
+			remoteInfo = TakePhotoAndRecordDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E0A567740CA2CFA88DB16DD /* Pods-TakePhotoAndRecordDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakePhotoAndRecordDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakePhotoAndRecordDemo/Pods-TakePhotoAndRecordDemo.release.xcconfig"; sourceTree = "<group>"; };
+		2F4CC54A634222AAEBD7A814 /* Pods-TakePhotoAndRecordDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakePhotoAndRecordDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TakePhotoAndRecordDemo/Pods-TakePhotoAndRecordDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		741B291E219D45D100F48E96 /* TakePhotoAndRecordDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakePhotoAndRecordDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		741B2921219D45D100F48E96 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		741B2922219D45D100F48E96 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		741B2924219D45D100F48E96 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		741B2925219D45D100F48E96 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		741B2928219D45D100F48E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		741B292A219D45D300F48E96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		741B292D219D45D300F48E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		741B292F219D45D300F48E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		741B2930219D45D300F48E96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		741B2936219D45D300F48E96 /* TakePhotoAndRecordDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakePhotoAndRecordDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		741B293A219D45D300F48E96 /* TakePhotoAndRecordDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TakePhotoAndRecordDemoTests.m; sourceTree = "<group>"; };
+		741B293C219D45D300F48E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		741B2941219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakePhotoAndRecordDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		741B2945219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TakePhotoAndRecordDemoUITests.m; sourceTree = "<group>"; };
+		741B2947219D45D300F48E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		741B2953219D4C8B00F48E96 /* UseAVFTakePhotoAndRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseAVFTakePhotoAndRecordViewController.h; sourceTree = "<group>"; };
+		741B2954219D4C8B00F48E96 /* UseAVFTakePhotoAndRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseAVFTakePhotoAndRecordViewController.m; sourceTree = "<group>"; };
+		746CDAA9219EB44300BE516F /* UseGPUImageVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseGPUImageVideoViewController.h; sourceTree = "<group>"; };
+		746CDAAA219EB44300BE516F /* UseGPUImageVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseGPUImageVideoViewController.m; sourceTree = "<group>"; };
+		74C7CD5C21AE704200D97AA9 /* VideoSetting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VideoSetting.plist; sourceTree = "<group>"; };
+		9CBD1E20ECB5200EDFE187B2 /* libPods-TakePhotoAndRecordDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TakePhotoAndRecordDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		741B291B219D45D100F48E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2164552D2617B6F694EEB8E7 /* libPods-TakePhotoAndRecordDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741B2933219D45D300F48E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741B293E219D45D300F48E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3ED5F1092D939081DDDEE352 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F4CC54A634222AAEBD7A814 /* Pods-TakePhotoAndRecordDemo.debug.xcconfig */,
+				1E0A567740CA2CFA88DB16DD /* Pods-TakePhotoAndRecordDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		741B2915219D45D100F48E96 = {
+			isa = PBXGroup;
+			children = (
+				741B2920219D45D100F48E96 /* TakePhotoAndRecordDemo */,
+				741B2939219D45D300F48E96 /* TakePhotoAndRecordDemoTests */,
+				741B2944219D45D300F48E96 /* TakePhotoAndRecordDemoUITests */,
+				741B291F219D45D100F48E96 /* Products */,
+				3ED5F1092D939081DDDEE352 /* Pods */,
+				C5898873671CA2F873A8D90B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		741B291F219D45D100F48E96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				741B291E219D45D100F48E96 /* TakePhotoAndRecordDemo.app */,
+				741B2936219D45D300F48E96 /* TakePhotoAndRecordDemoTests.xctest */,
+				741B2941219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		741B2920219D45D100F48E96 /* TakePhotoAndRecordDemo */ = {
+			isa = PBXGroup;
+			children = (
+				74C7CD5C21AE704200D97AA9 /* VideoSetting.plist */,
+				741B2921219D45D100F48E96 /* AppDelegate.h */,
+				741B2922219D45D100F48E96 /* AppDelegate.m */,
+				741B2924219D45D100F48E96 /* ViewController.h */,
+				741B2925219D45D100F48E96 /* ViewController.m */,
+				741B2953219D4C8B00F48E96 /* UseAVFTakePhotoAndRecordViewController.h */,
+				741B2954219D4C8B00F48E96 /* UseAVFTakePhotoAndRecordViewController.m */,
+				746CDAA9219EB44300BE516F /* UseGPUImageVideoViewController.h */,
+				746CDAAA219EB44300BE516F /* UseGPUImageVideoViewController.m */,
+				741B2927219D45D100F48E96 /* Main.storyboard */,
+				741B292A219D45D300F48E96 /* Assets.xcassets */,
+				741B292C219D45D300F48E96 /* LaunchScreen.storyboard */,
+				741B292F219D45D300F48E96 /* Info.plist */,
+				741B2930219D45D300F48E96 /* main.m */,
+			);
+			path = TakePhotoAndRecordDemo;
+			sourceTree = "<group>";
+		};
+		741B2939219D45D300F48E96 /* TakePhotoAndRecordDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				741B293A219D45D300F48E96 /* TakePhotoAndRecordDemoTests.m */,
+				741B293C219D45D300F48E96 /* Info.plist */,
+			);
+			path = TakePhotoAndRecordDemoTests;
+			sourceTree = "<group>";
+		};
+		741B2944219D45D300F48E96 /* TakePhotoAndRecordDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				741B2945219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.m */,
+				741B2947219D45D300F48E96 /* Info.plist */,
+			);
+			path = TakePhotoAndRecordDemoUITests;
+			sourceTree = "<group>";
+		};
+		C5898873671CA2F873A8D90B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CBD1E20ECB5200EDFE187B2 /* libPods-TakePhotoAndRecordDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		741B291D219D45D100F48E96 /* TakePhotoAndRecordDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 741B294A219D45D300F48E96 /* Build configuration list for PBXNativeTarget "TakePhotoAndRecordDemo" */;
+			buildPhases = (
+				79C76F5C55022CF288930215 /* [CP] Check Pods Manifest.lock */,
+				741B291A219D45D100F48E96 /* Sources */,
+				741B291B219D45D100F48E96 /* Frameworks */,
+				741B291C219D45D100F48E96 /* Resources */,
+				F639A1074F721F2ABD67A97D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TakePhotoAndRecordDemo;
+			productName = TakePhotoAndRecordDemo;
+			productReference = 741B291E219D45D100F48E96 /* TakePhotoAndRecordDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		741B2935219D45D300F48E96 /* TakePhotoAndRecordDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 741B294D219D45D300F48E96 /* Build configuration list for PBXNativeTarget "TakePhotoAndRecordDemoTests" */;
+			buildPhases = (
+				741B2932219D45D300F48E96 /* Sources */,
+				741B2933219D45D300F48E96 /* Frameworks */,
+				741B2934219D45D300F48E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				741B2938219D45D300F48E96 /* PBXTargetDependency */,
+			);
+			name = TakePhotoAndRecordDemoTests;
+			productName = TakePhotoAndRecordDemoTests;
+			productReference = 741B2936219D45D300F48E96 /* TakePhotoAndRecordDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		741B2940219D45D300F48E96 /* TakePhotoAndRecordDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 741B2950219D45D300F48E96 /* Build configuration list for PBXNativeTarget "TakePhotoAndRecordDemoUITests" */;
+			buildPhases = (
+				741B293D219D45D300F48E96 /* Sources */,
+				741B293E219D45D300F48E96 /* Frameworks */,
+				741B293F219D45D300F48E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				741B2943219D45D300F48E96 /* PBXTargetDependency */,
+			);
+			name = TakePhotoAndRecordDemoUITests;
+			productName = TakePhotoAndRecordDemoUITests;
+			productReference = 741B2941219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		741B2916219D45D100F48E96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Chen;
+				TargetAttributes = {
+					741B291D219D45D100F48E96 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					741B2935219D45D300F48E96 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 741B291D219D45D100F48E96;
+					};
+					741B2940219D45D300F48E96 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 741B291D219D45D100F48E96;
+					};
+				};
+			};
+			buildConfigurationList = 741B2919219D45D100F48E96 /* Build configuration list for PBXProject "TakePhotoAndRecordDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 741B2915219D45D100F48E96;
+			productRefGroup = 741B291F219D45D100F48E96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				741B291D219D45D100F48E96 /* TakePhotoAndRecordDemo */,
+				741B2935219D45D300F48E96 /* TakePhotoAndRecordDemoTests */,
+				741B2940219D45D300F48E96 /* TakePhotoAndRecordDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		741B291C219D45D100F48E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741B292E219D45D300F48E96 /* LaunchScreen.storyboard in Resources */,
+				74C7CD5D21AE704300D97AA9 /* VideoSetting.plist in Resources */,
+				741B292B219D45D300F48E96 /* Assets.xcassets in Resources */,
+				741B2929219D45D100F48E96 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741B2934219D45D300F48E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741B293F219D45D300F48E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		79C76F5C55022CF288930215 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TakePhotoAndRecordDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F639A1074F721F2ABD67A97D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TakePhotoAndRecordDemo/Pods-TakePhotoAndRecordDemo-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_amatorka.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_miss_etikate.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_1.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/lookup_soft_elegance_2.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TakePhotoAndRecordDemo/Pods-TakePhotoAndRecordDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		741B291A219D45D100F48E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741B2926219D45D100F48E96 /* ViewController.m in Sources */,
+				741B2955219D4C8B00F48E96 /* UseAVFTakePhotoAndRecordViewController.m in Sources */,
+				741B2931219D45D300F48E96 /* main.m in Sources */,
+				746CDAAB219EB44300BE516F /* UseGPUImageVideoViewController.m in Sources */,
+				741B2923219D45D100F48E96 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741B2932219D45D300F48E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741B293B219D45D300F48E96 /* TakePhotoAndRecordDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		741B293D219D45D300F48E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				741B2946219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		741B2938219D45D300F48E96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 741B291D219D45D100F48E96 /* TakePhotoAndRecordDemo */;
+			targetProxy = 741B2937219D45D300F48E96 /* PBXContainerItemProxy */;
+		};
+		741B2943219D45D300F48E96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 741B291D219D45D100F48E96 /* TakePhotoAndRecordDemo */;
+			targetProxy = 741B2942219D45D300F48E96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		741B2927219D45D100F48E96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				741B2928219D45D100F48E96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		741B292C219D45D300F48E96 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				741B292D219D45D300F48E96 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		741B2948219D45D300F48E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		741B2949219D45D300F48E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		741B294B219D45D300F48E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F4CC54A634222AAEBD7A814 /* Pods-TakePhotoAndRecordDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F8PFJQR845;
+				INFOPLIST_FILE = TakePhotoAndRecordDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Chen.TakePhotoAndRecordDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		741B294C219D45D300F48E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E0A567740CA2CFA88DB16DD /* Pods-TakePhotoAndRecordDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F8PFJQR845;
+				INFOPLIST_FILE = TakePhotoAndRecordDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Chen.TakePhotoAndRecordDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		741B294E219D45D300F48E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TakePhotoAndRecordDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Chen.TakePhotoAndRecordDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TakePhotoAndRecordDemo.app/TakePhotoAndRecordDemo";
+			};
+			name = Debug;
+		};
+		741B294F219D45D300F48E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TakePhotoAndRecordDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Chen.TakePhotoAndRecordDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TakePhotoAndRecordDemo.app/TakePhotoAndRecordDemo";
+			};
+			name = Release;
+		};
+		741B2951219D45D300F48E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TakePhotoAndRecordDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Chen.TakePhotoAndRecordDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TakePhotoAndRecordDemo;
+			};
+			name = Debug;
+		};
+		741B2952219D45D300F48E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TakePhotoAndRecordDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Chen.TakePhotoAndRecordDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TakePhotoAndRecordDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		741B2919219D45D100F48E96 /* Build configuration list for PBXProject "TakePhotoAndRecordDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				741B2948219D45D300F48E96 /* Debug */,
+				741B2949219D45D300F48E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		741B294A219D45D300F48E96 /* Build configuration list for PBXNativeTarget "TakePhotoAndRecordDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				741B294B219D45D300F48E96 /* Debug */,
+				741B294C219D45D300F48E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		741B294D219D45D300F48E96 /* Build configuration list for PBXNativeTarget "TakePhotoAndRecordDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				741B294E219D45D300F48E96 /* Debug */,
+				741B294F219D45D300F48E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		741B2950219D45D300F48E96 /* Build configuration list for PBXNativeTarget "TakePhotoAndRecordDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				741B2951219D45D300F48E96 /* Debug */,
+				741B2952219D45D300F48E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 741B2916219D45D100F48E96 /* Project object */;
+}

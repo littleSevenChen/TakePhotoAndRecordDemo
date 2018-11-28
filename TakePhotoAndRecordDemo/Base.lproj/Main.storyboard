@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="owu-gH-Ffp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdZ-ro-okk">
+                                <rect key="frame" x="109" y="164" width="157" height="30"/>
+                                <state key="normal" title="使用AVFoundation拍照"/>
+                                <connections>
+                                    <action selector="AVFTakePhotoBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B4N-sB-fqh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejQ-ip-P6C">
+                                <rect key="frame" x="109" y="224" width="157" height="30"/>
+                                <state key="normal" title="使用AVFoundation录像"/>
+                                <connections>
+                                    <action selector="AVFRecordBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sde-Es-6pC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kt-5N-LB5">
+                                <rect key="frame" x="120" y="344" width="135" height="30"/>
+                                <state key="normal" title="使用GPUImage录像"/>
+                                <connections>
+                                    <action selector="GPUImageRecordBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oQW-7S-cjw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFf-zJ-6ZO">
+                                <rect key="frame" x="120" y="289" width="135" height="30"/>
+                                <state key="normal" title="使用GPUImage拍照"/>
+                                <connections>
+                                    <action selector="GPUImageTakePhotoBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MpY-fJ-ZCQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2kt-5N-LB5" firstAttribute="top" secondItem="iFf-zJ-6ZO" secondAttribute="bottom" constant="30" id="6ue-g5-fWS"/>
+                            <constraint firstItem="fdZ-ro-okk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Awk-PM-KLb"/>
+                            <constraint firstItem="iFf-zJ-6ZO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eg3-CP-DU7"/>
+                            <constraint firstItem="iFf-zJ-6ZO" firstAttribute="top" secondItem="ejQ-ip-P6C" secondAttribute="bottom" constant="30" id="Rfq-uK-anF"/>
+                            <constraint firstItem="2kt-5N-LB5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VMp-le-Qg1"/>
+                            <constraint firstItem="ejQ-ip-P6C" firstAttribute="top" secondItem="fdZ-ro-okk" secondAttribute="bottom" constant="30" id="cfE-59-ava"/>
+                            <constraint firstItem="ejQ-ip-P6C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ghg-TI-3GO"/>
+                            <constraint firstItem="fdZ-ro-okk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="snd-iN-ldS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Arv-ym-QeU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="33.733133433283363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jrd-Ug-uRz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="owu-gH-Ffp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dne-Bn-066">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vGO-B4-716"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCk-yB-LX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="-663.41829085457277"/>
+        </scene>
+    </scenes>
+</document>

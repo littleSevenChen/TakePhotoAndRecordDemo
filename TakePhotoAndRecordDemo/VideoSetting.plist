@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AVCaptureSessionPreset352x288</key>
+	<integer>512</integer>
+	<key>AVCaptureSessionPreset640x480</key>
+	<integer>1024</integer>
+	<key>AVCaptureSessionPreset1280x720</key>
+	<real>1024</real>
+	<key>AVCaptureSessionPreset1920x1080</key>
+	<real>1024</real>
+	<key>AVCaptureSessionPreset3840x2160</key>
+	<integer>1024</integer>
+</dict>
+</plist>
