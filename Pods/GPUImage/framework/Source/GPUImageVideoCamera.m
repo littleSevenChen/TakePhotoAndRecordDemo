@@ -121,7 +121,7 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 @implementation GPUImageVideoCamera
 
 @synthesize captureSessionPreset = _captureSessionPreset;
-@synthesize captureSession = _captureSession;
+//@synthesize captureSession = _captureSession;
 @synthesize inputCamera = _inputCamera;
 @synthesize runBenchmark = _runBenchmark;
 @synthesize outputImageOrientation = _outputImageOrientation;
@@ -149,7 +149,8 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 		return nil;
     }
     
-    cameraProcessingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0);
+//    cameraProcessingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0);
+    cameraProcessingQueue = dispatch_queue_create("VideoDataOutputQueue", DISPATCH_QUEUE_SERIAL);
 	audioProcessingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW,0);
 
     frameRenderingSemaphore = dispatch_semaphore_create(1);
@@ -179,7 +180,6 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
     
 	// Create the capture session
 	_captureSession = [[AVCaptureSession alloc] init];
-	
     [_captureSession beginConfiguration];
     
 	// Add the video input	
@@ -193,6 +193,14 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 	// Add the video frame output	
 	videoOutput = [[AVCaptureVideoDataOutput alloc] init];
 	[videoOutput setAlwaysDiscardsLateVideoFrames:NO];
+    AVCaptureMetadataOutput *metadataOutput = [[AVCaptureMetadataOutput alloc] init];;
+    if ([self.captureSession canAddOutput:metadataOutput]) {
+        [self.captureSession addOutput:metadataOutput];
+        
+        self->metaDataOutputQueue = dispatch_queue_create("MetaDataOutputQueue", DISPATCH_QUEUE_SERIAL);
+        [metadataOutput setMetadataObjectsDelegate:self queue: self->metaDataOutputQueue];
+        [metadataOutput setMetadataObjectTypes:@[AVMetadataObjectTypeFace]];
+    }
     
 //    if (captureAsYUV && [GPUImageContext deviceSupportsRedTextures])
     if (captureAsYUV && [GPUImageContext supportsFastTextureUpload])
@@ -297,6 +305,22 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 //        conn.videoMinFrameDuration = CMTimeMake(1,60);
 //    if (conn.supportsVideoMaxFrameDuration)
 //        conn.videoMaxFrameDuration = CMTimeMake(1,60);
+    
+    AVCaptureConnection *outPutCaptureConnectin = [videoOutput connectionWithMediaType:AVMediaTypeVideo];
+    if (_inputCamera.position == AVCaptureDevicePositionFront && outPutCaptureConnectin.supportsVideoMirroring)
+    {
+        if (self.isTakePhoto == YES) {
+            outPutCaptureConnectin.videoMirrored = NO;
+        }
+        else
+        {
+            outPutCaptureConnectin.videoMirrored = YES;
+        }
+    }
+    else
+    {
+        outPutCaptureConnectin.videoMirrored = NO;
+    }
     
     [_captureSession commitConfiguration];
     
@@ -447,6 +471,8 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
         currentCameraPosition = AVCaptureDevicePositionBack;
     }
     
+
+    
     AVCaptureDevice *backFacingCamera = nil;
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
 	for (AVCaptureDevice *device in devices) 
@@ -478,6 +504,24 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
     
     _inputCamera = backFacingCamera;
     [self setOutputImageOrientation:_outputImageOrientation];
+    
+    //    [_captureSession beginConfiguration];
+    AVCaptureConnection *outPutCaptureConnectin = [videoOutput connectionWithMediaType:AVMediaTypeVideo];
+    if (_inputCamera.position == AVCaptureDevicePositionFront && outPutCaptureConnectin.supportsVideoMirroring)
+    {
+        if (self.isTakePhoto == YES) {
+            outPutCaptureConnectin.videoMirrored = NO;
+        }
+        else
+        {
+            outPutCaptureConnectin.videoMirrored = YES;
+        }
+    }
+    else
+    {
+        outPutCaptureConnectin.videoMirrored = NO;
+    }
+    //    [_captureSession commitConfiguration];
 }
 
 - (AVCaptureDevicePosition)cameraPosition 
@@ -943,7 +987,15 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
     }
     else if (captureOutput == audioOutput)
     {
+        CFRetain(sampleBuffer);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([self.delegate respondsToSelector:@selector(willoutputAudioSampleBuffer:)]) {
+                [self.delegate willoutputAudioSampleBuffer:sampleBuffer];
+            }
+            CFRelease(sampleBuffer);
+        });
         [self processAudioSampleBuffer:sampleBuffer];
+
     }
     else
     {
@@ -954,8 +1006,9 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
         
         CFRetain(sampleBuffer);
         runAsynchronouslyOnVideoProcessingQueue(^{
+            
             //Feature Detection Hook.
-            if (self.delegate)
+            if ([self.delegate respondsToSelector:@selector(willOutputSampleBuffer:)])
             {
                 [self.delegate willOutputSampleBuffer:sampleBuffer];
             }
@@ -967,7 +1020,12 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
         });
     }
 }
-
+- (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection
+API_AVAILABLE(ios(6.0)){
+    //当检测到了人脸会走这个回调
+    [self.delegate willOutput:output withMetadataObjects:metadataObjects];
+    
+}
 #pragma mark -
 #pragma mark Accessors
 
@@ -1124,6 +1182,30 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 {
     _horizontallyMirrorRearFacingCamera = newValue;
     [self updateOrientationSendToTargets];
+}
+
+-(void)setIsTakePhoto:(BOOL)isTakePhoto
+{
+    _isTakePhoto = isTakePhoto;
+    
+    [_captureSession beginConfiguration];
+    AVCaptureConnection *outPutCaptureConnectin = [videoOutput connectionWithMediaType:AVMediaTypeVideo];
+    if (_inputCamera.position == AVCaptureDevicePositionFront && outPutCaptureConnectin.supportsVideoMirroring)
+    {
+        if (self.isTakePhoto == YES) {
+            outPutCaptureConnectin.videoMirrored = NO;
+        }
+        else
+        {
+            outPutCaptureConnectin.videoMirrored = YES;
+        }
+    }
+    else
+    {
+        outPutCaptureConnectin.videoMirrored = NO;
+    }
+    
+    [_captureSession commitConfiguration];
 }
 
 @end

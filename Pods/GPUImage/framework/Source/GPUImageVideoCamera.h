@@ -17,6 +17,9 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
 
 @optional
 - (void)willOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer;
+
+- (void)willoutputAudioSampleBuffer:(CMSampleBufferRef)sampleBuffer;
+- (void)willOutput:(AVCaptureOutput *)output withMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects;
 @end
 
 
@@ -28,7 +31,7 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
     NSUInteger numberOfFramesCaptured;
     CGFloat totalFrameTimeDuringCapture;
     
-    AVCaptureSession *_captureSession;
+//    AVCaptureSession *_captureSession;
     AVCaptureDevice *_inputCamera;
     AVCaptureDevice *_microphone;
     AVCaptureDeviceInput *videoInput;
@@ -37,13 +40,18 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
     BOOL capturePaused;
     GPUImageRotationMode outputRotation, internalRotation;
     dispatch_semaphore_t frameRenderingSemaphore;
-        
+    dispatch_queue_t metaDataOutputQueue;
+    dispatch_queue_t videoDataOutputQueue;
     BOOL captureAsYUV;
     GLuint luminanceTexture, chrominanceTexture;
 
     __unsafe_unretained id<GPUImageVideoCameraDelegate> _delegate;
 }
-
+//@property (nonatomic, strong)AVCaptureSession *captureSession;
+//@property (nonatomic, retain) dispatch_queue_t metaDataOutputQueue;
+//@property (nonatomic, retain) dispatch_queue_t videoDataOutputQueue;
+@property (nonatomic,strong)AVCaptureVideoDataOutput *videoDataOutput;
+@property (nonatomic,strong)NSMutableArray *facesViewArr;
 /// The AVCaptureSession used to capture from the camera
 @property(readonly, retain, nonatomic) AVCaptureSession *captureSession;
 
@@ -73,6 +81,9 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
 @property(readwrite, nonatomic) BOOL horizontallyMirrorFrontFacingCamera, horizontallyMirrorRearFacingCamera;
 
 @property(nonatomic, assign) id<GPUImageVideoCameraDelegate> delegate;
+
+//add by lifs
+@property (nonatomic, assign) BOOL isTakePhoto;
 
 /// @name Initialization and teardown
 
@@ -122,7 +133,7 @@ extern NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString
  @param sampleBuffer Buffer to process
  */
 - (void)processVideoSampleBuffer:(CMSampleBufferRef)sampleBuffer;
-
+- (void)willOutput:(AVCaptureOutput *)output withMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects;
 /** Process an audio sample
  @param sampleBuffer Buffer to process
  */

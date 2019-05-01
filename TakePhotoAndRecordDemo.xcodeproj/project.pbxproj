@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		1E0A567740CA2CFA88DB16DD /* Pods-TakePhotoAndRecordDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakePhotoAndRecordDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakePhotoAndRecordDemo/Pods-TakePhotoAndRecordDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2F4CC54A634222AAEBD7A814 /* Pods-TakePhotoAndRecordDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakePhotoAndRecordDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TakePhotoAndRecordDemo/Pods-TakePhotoAndRecordDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		741B291E219D45D100F48E96 /* TakePhotoAndRecordDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakePhotoAndRecordDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		741B291E219D45D100F48E96 /* TakePhotoAndRecordDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakePhotoAndRecordDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		741B2921219D45D100F48E96 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		741B2922219D45D100F48E96 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		741B2924219D45D100F48E96 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		741B291F219D45D100F48E96 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				741B291E219D45D100F48E96 /* TakePhotoAndRecordDemo.app */,
+				741B291E219D45D100F48E96 /* TakePhotoAndRecordDemos.app */,
 				741B2936219D45D300F48E96 /* TakePhotoAndRecordDemoTests.xctest */,
 				741B2941219D45D300F48E96 /* TakePhotoAndRecordDemoUITests.xctest */,
 			);
@@ -188,7 +188,7 @@
 			);
 			name = TakePhotoAndRecordDemo;
 			productName = TakePhotoAndRecordDemo;
-			productReference = 741B291E219D45D100F48E96 /* TakePhotoAndRecordDemo.app */;
+			productReference = 741B291E219D45D100F48E96 /* TakePhotoAndRecordDemos.app */;
 			productType = "com.apple.product-type.application";
 		};
 		741B2935219D45D300F48E96 /* TakePhotoAndRecordDemoTests */ = {
@@ -524,7 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F8PFJQR845;
+				DEVELOPMENT_TEAM = 8KH5MWX54H;
 				INFOPLIST_FILE = TakePhotoAndRecordDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -532,7 +532,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chen.TakePhotoAndRecordDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TakePhotoAndRecordDemos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -543,7 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F8PFJQR845;
+				DEVELOPMENT_TEAM = 8KH5MWX54H;
 				INFOPLIST_FILE = TakePhotoAndRecordDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -551,7 +551,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chen.TakePhotoAndRecordDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TakePhotoAndRecordDemos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

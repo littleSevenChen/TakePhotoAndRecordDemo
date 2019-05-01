@@ -17,36 +17,25 @@
 @property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
 @property (nonatomic, strong) GPUImageAlphaBlendFilter *blendFilter;
 @property (nonatomic, strong) GPUImageView *filterView;
-
 @property (nonatomic, strong) GPUImageUIElement *UIElement;
 @property (nonatomic, strong) GPUImageFilter *filter;
-
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UILabel *preivewTimeLabel;
 @property (nonatomic, strong) UILabel *previewNameLabel;
 @property (nonatomic, strong) UILabel *freeSpaceLabel;
 @property (nonatomic, strong) UIView *waterMarkView;
-
 @property (nonatomic, strong) UIButton *recordBt;
 @property (nonatomic, strong) UIButton *takePhotoBt;
 @property (nonatomic, assign) float cropWidth;
 @property (nonatomic, assign) float cropHeight;
-
 @property (nonatomic, strong) NSTimer *refreshTimer;
-
 @property (nonatomic, assign) int recordSeconds;
-
-
 @property (nonatomic,strong)NSMutableArray *cameraOrMicrophoneAlertViewArr;
-
 @property (nonatomic, copy) NSString *videoFileName;
-
-
 @property (nonatomic, strong) UIButton *backButton;
-
-
 @property (nonatomic, copy) NSString *labelName;
-
+@property (nonatomic,strong)NSMutableArray *facesViewArr;
+@property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
 @end
 
 @implementation UseGPUImageVideoViewController
@@ -431,18 +420,47 @@
                 NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
                 
                 NSString *videoFilePath = [NSString stringWithFormat:@"%@/%@",[paths objectAtIndex:0],self.videoFileName];
+                NSLog(@"videoFilePath:%@",videoFilePath);
             }];
         });
     }];
     
 }
 
+#pragma mark --GPUImageVideoCameraDelegate
+- (void)willOutput:(AVCaptureOutput *)output withMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects{
+    //转换
+    dispatch_async(dispatch_get_main_queue(), ^{
+        for (UIView *faceView in self.facesViewArr) {
+            [faceView removeFromSuperview];
+        }
+        [self.facesViewArr removeAllObjects];
+    });
+    
+    for (AVMetadataFaceObject *faceobject in metadataObjects) {
+        AVMetadataObject *face = [self.previewLayer transformedMetadataObjectForMetadataObject:faceobject];
+        CGRect r = face.bounds;
+        //画框
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIView *faceBox = [[UIView alloc] initWithFrame:r];
+            faceBox.layer.borderWidth = 3;
+            faceBox.layer.borderColor = [UIColor redColor].CGColor;
+            faceBox.backgroundColor = [UIColor clearColor];
+            [self.view addSubview:faceBox];
+            [self.facesViewArr addObject:faceBox];
+                NSLog(@"self.facesViewArr.count：%lu",(unsigned long)self.facesViewArr.count);
+        });
+       
+    }
+
+}
 
 #pragma mark -- 提示用户进行麦克风使用授权
 - (void)showSetAlertView:(NSString *)type
 {
     NSAttributedString *title = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@权限未开启",type]];
     NSMutableAttributedString *message = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@权限未开启，请进入系统【设置】>【隐私】>【%@】中打开开关,开启%@功能",type,type,type]];
+    NSLog(@"title:%@ message:%@",title,message);
     
 }
 
@@ -512,6 +530,12 @@
         _cameraOrMicrophoneAlertViewArr = [NSMutableArray array];
     }
     return _cameraOrMicrophoneAlertViewArr;
+}
+-(NSMutableArray *)facesViewArr{
+    if (!_facesViewArr) {
+        _facesViewArr = [NSMutableArray array];
+    }
+    return _facesViewArr;
 }
 #pragma mark - 其他
 - (void)didReceiveMemoryWarning {
