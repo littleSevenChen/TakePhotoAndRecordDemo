@@ -27,13 +27,13 @@
 //图像预览层，实时显示捕获的图像
 @property(nonatomic)AVCaptureVideoPreviewLayer *previewLayer;
 //拍照按钮
-@property (nonatomic)UIButton *photoButton;
+@property (nonatomic)UIButton           *photoButton;
 //闪光灯按钮
-@property (nonatomic)UIButton *flashButton;
+@property (nonatomic)UIButton           *flashButton;
 //聚焦
-@property (nonatomic)UIView *focusView;
+@property (nonatomic)UIView             *focusView;
 //是否开启闪光灯
-@property (nonatomic)BOOL isflashOn;
+@property (nonatomic)BOOL               isflashOn;
 /**
  *  记录开始的缩放比例
  */
